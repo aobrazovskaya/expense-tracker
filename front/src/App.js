@@ -1,9 +1,12 @@
 import React from 'react';
 import './App.scss';
+import Categories from './components/Categories/Categories'
 
 function App() {
   return (
-    <div></div>
+    <div>
+      <Categories />
+    </div>
   );
 }
 
