@@ -1,0 +1,40 @@
+// Colors
+//---------------------------------
+
+// Default
+
+$color-default-black:             #000000;
+$color-default-white:             #ffffff;
+$color-transparent:               rgba(255, 255, 255, 0);
+
+// Base
+
+$color-white-dark:                #f7f6f0;
+$color-white-light:               #f0f0f0;
+
+// Typography
+//---------------------------------
+
+$font-family--main:                 "Roboto", "Arial", sans-serif;
+
+// Animation
+//---------------------------------
+
+$opacity-hover:                     0.7;
+$transition:                        0.3s ease;
+$modal-transition:                  0.6s cubic-bezier(0.55, 0, 0.1, 1);
+
+// Viewports
+//---------------------------------
+
+$viewport--sm:                      320px;
+$viewport--md:                      768px;
+$viewport--lg:                      1024px;
+$viewport--xl:                      1920px;
+$max-modal-desktop-width:           1440px;
+
+// Retina
+//---------------------------------
+
+$retina-dpi:                        144dpi;
+$retina-dppx:                       1.5dppx;
