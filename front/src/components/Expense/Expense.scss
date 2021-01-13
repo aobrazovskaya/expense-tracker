@@ -1,0 +1,23 @@
+.expense {
+  display: flex;
+  align-items: center;
+  padding: 2px 0;
+  border-bottom: 1px solid grey;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &__category {
+    width: 20%;
+  }
+
+  &__title {
+    width: 68%;
+    overflow: hidden;
+  }
+
+  &__price {
+    width: 12%;
+  }
+}
