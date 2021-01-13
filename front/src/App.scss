@@ -1,0 +1,22 @@
+@import './styles/variables.scss';
+
+.app {
+  min-height: 100vh;
+}
+
+.app-wrapper {
+  background-color: $color-background;
+  min-height: 870px;
+}
+
+.app-header {
+  margin: 0 auto;
+  max-width: 1200px;
+  background-color: white;
+}
+
+.app-content {
+  margin: 0 auto;
+  max-width: 1200px;
+
+}
