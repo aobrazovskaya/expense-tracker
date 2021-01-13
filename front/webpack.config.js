@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 
 module.exports = {
 	output: {
@@ -25,13 +26,26 @@ module.exports = {
         ],
 			},
 			{
-				test: /\.(png|svg|jpg|jpeg|gif)$/i,
-				type: 'asset/resource',
-			},
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      },
 			{
 				test: /\.(woff|woff2|eot|ttf|otf)$/i,
 				type: 'asset/resource',
 			},
+			{
+				test: /\.svg$/,
+				loader: 'svg-sprite-loader',
+				include: path.resolve(__dirname, 'src/asset/icons'),
+				options: {
+					extract: true,
+					outputPath: '/'
+				}
+			}
 		]
 	},
 	devServer: {
@@ -42,6 +56,9 @@ module.exports = {
 			template: __dirname + '/src/index.html',
 			filename: 'index.html',
 			inject: 'body'
+		}),
+		new SpriteLoaderPlugin({
+			plainSprite: true
 		})
 	]
 };
