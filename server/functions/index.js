@@ -14,16 +14,30 @@ const db = admin.firestore();
 app.use(cors({ origin: true }));
 
 //get
-app.get('/hello-world', (req, res) => {
-  return res.status(200).send('Hello World!');
+app.get('/expenses', async (req, res) => {
+  const response = await db.collection('expenses').get().then(result => {
+    const expenses = result.docs;
+    return expenses.map(expense => {
+      const data = expense.data();
+      return {
+        id: expense.id,
+        ...data
+      }
+    })
+  });
+  return res.status(200).send(response);
 });
 
 //post
 app.post('/create', (req, res) => {
   (async () => {
       try {
-        await db.collection('items').doc('/' + req.body.id + '/')
-            .create({item: req.body.item});
+        await db.collection('expenses').doc()
+            .set({
+              title: req.body.title,
+              price: req.body.price,
+              category: req.body.category
+            });
         return res.status(200).send();
       } catch (error) {
         console.log(error);
@@ -33,17 +47,17 @@ app.post('/create', (req, res) => {
 });
 
 // delete
-app.delete('/delete/:item_id', (req, res) => {
-  (async () => {
-      try {
-          const document = db.collection('items').doc(req.params.item_id);
-          await document.delete();
-          return res.status(200).send();
-      } catch (error) {
-          console.log(error);
-          return res.status(500).send(error);
-      }
-      })();
-  });
+// app.delete('/delete/:item_id', (req, res) => {
+//   (async () => {
+//       try {
+//           const document = db.collection('items').doc(req.params.item_id);
+//           await document.delete();
+//           return res.status(200).send();
+//       } catch (error) {
+//           console.log(error);
+//           return res.status(500).send(error);
+//       }
+//       })();
+//   });
 
 exports.app = functions.https.onRequest(app);

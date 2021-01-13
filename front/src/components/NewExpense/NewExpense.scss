@@ -7,7 +7,7 @@
   }
 
   &__category,
-  &__text,
+  &__title,
   &__price {
     p {
       margin: 15px 0 7px 0;
@@ -21,7 +21,7 @@
     }
   }
 
-  &__text {
+  &__title {
     p {
       margin-top: 0;
     }

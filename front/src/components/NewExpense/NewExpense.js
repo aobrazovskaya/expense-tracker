@@ -22,16 +22,16 @@ function NewExpense() {
 
   return (
     <div className="new-expense">
-      <form>
+      <form action="http://localhost:5001/expensetracker-8abdc/us-central1/app/create" method="post">
         <div className="new-expense__about">
-          <label className="new-expense__text">
+          <label className="new-expense__title">
             <p>Описание:</p>
-            <input name="name" type="text" required></input>
+            <input name="title" type="text" required></input>
           </label>
           <div className="new-expense__details">
             <label className="new-expense__category">
               <p>Категория:</p>
-              <select name="select">
+              <select name="category">
                 {categoriesSelection}
               </select>
             </label>
