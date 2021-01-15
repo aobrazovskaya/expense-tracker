@@ -15,32 +15,38 @@ app.use(cors({ origin: true }));
 
 //get
 app.get('/expenses', async (req, res) => {
-  const response = await db.collection('expenses').get().then(result => {
-    const expenses = result.docs;
-    return expenses.map(expense => {
-      const data = expense.data();
-      return {
-        id: expense.id,
-        ...data
-      }
-    })
-  });
-  return res.status(200).send(response);
+  try {
+    const response = await db.collection('expenses').get().then(result => {
+      const expenses = result.docs;
+      return expenses.map(expense => {
+        const data = expense.data();
+        return {
+          id: expense.id,
+          ...data,
+          date: data.date.toDate()
+        }
+      }).sort((a, b) => new Date(a.date) - new Date(b.date))
+    });
+    return res.status(200).send(response);
+  } catch (e) {
+    console.error(e)
+    return res.status(500).send(e);
+  }
 });
 
 //post
-app.post('/create', (req, res) => {
+app.post('/expenses', (req, res) => {
   (async () => {
       try {
         await db.collection('expenses').doc()
             .set({
               title: req.body.title,
               price: req.body.price,
-              category: req.body.category
+              category: req.body.category,
+              date: admin.firestore.Timestamp.fromDate(new Date())
             });
         return res.status(200).send();
       } catch (error) {
-        console.log(error);
         return res.status(500).send(error);
       }
     })();

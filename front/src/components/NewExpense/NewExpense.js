@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './NewExpense.scss';
 
 const categoriesList = [
@@ -15,33 +15,46 @@ const categoriesList = [
   { id: 10, name: "Счета", icon: "finance"  }
 ];
 
-function NewExpense() {
+function NewExpense(props) {
+  const [newTitle, setNewTitle] = useState('');
+  const [newCategory, setNewCategory] = useState(categoriesList[0].icon);
+  const [newPrice, setNewPrice] = useState('');
+
   const categoriesSelection = categoriesList.map((item) =>
-    <option value={item.icon}>{item.name}</option>
+    <option key={item.id} value={item.icon}>{item.name}</option>
   );
+
+  function handleNewExpense(event) {
+    event.preventDefault();
+    props.handleClick({
+      title: newTitle,
+      category: newCategory,
+      price: newPrice
+    });
+  }
 
   return (
     <div className="new-expense">
-      <form action="http://localhost:5001/expensetracker-8abdc/us-central1/app/create" method="post">
+      <form>
         <div className="new-expense__about">
           <label className="new-expense__title">
             <p>Описание:</p>
-            <input name="title" type="text" required></input>
+            <input name="title" type="text" onChange={ (e) => setNewTitle(e.target.value) } required></input>
           </label>
           <div className="new-expense__details">
             <label className="new-expense__category">
               <p>Категория:</p>
-              <select name="category">
+              <select name="category" onChange={ (e) => setNewCategory(e.target.value) }>
                 {categoriesSelection}
               </select>
             </label>
             <label className="new-expense__price">
               <p>Цена:</p>
-              $ <input name="price" type="number" required></input>
+              $ <input name="price" type="number" onChange={ (e) => setNewPrice(e.target.value) } required></input>
             </label>
           </div>
         </div>
-        <button>Добавить</button>
+        <button onClick={ handleNewExpense }>Добавить</button>
       </form>
     </div>
   );

@@ -6,7 +6,7 @@ function Expense(props) {
     <li className="expense">
       <div className="expense__category">
         <svg width="60" height="60">
-          <use href={`/sprite.svg#finance`}></use>
+          <use href={`/sprite.svg#${props.category}`}></use>
         </svg>
       </div>
       <p className="expense__title">{props.title}</p>
