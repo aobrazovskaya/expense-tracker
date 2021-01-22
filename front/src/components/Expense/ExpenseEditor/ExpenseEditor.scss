@@ -1,0 +1,62 @@
+.expense-editor {
+
+  &__about {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+
+  &__category,
+  &__title,
+  &__price {
+    p {
+      margin: 15px 0 7px 0;
+    }
+
+    input {
+      padding: 10px 12px;
+      border: 1px solid #d7d7d7;
+      border-radius: 5px;
+      line-height: 21px;
+    }
+  }
+
+  &__title {
+    p {
+      margin-top: 0;
+    }
+
+    input {
+      width: 413px;
+    }
+  }
+
+  &__category {
+    margin-right: 50px;
+
+    select {
+      padding: 10px 12px;
+      width: 250px;
+      font-size: 16px;
+      line-height: 21px;
+      border: 1px solid #d7d7d7;
+      border-radius: 5px;
+    }
+  }
+
+  &__price {
+    input {
+      width: 100px;
+    }
+  }
+
+  &__details {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  button {
+    margin-bottom: 40px;
+    padding: 15px 30px;
+  }
+}

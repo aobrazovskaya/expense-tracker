@@ -52,18 +52,35 @@ app.post('/expenses', (req, res) => {
     })();
 });
 
+//put
+app.put('/newexpense', (req, res) => {
+  (async () => {
+    try {
+      await db.collection('expenses').doc(req.body.id)
+      .update({
+        title: req.body.title,
+        price: req.body.price,
+        category: req.body.category,
+        id: req.body.id
+      });
+      return res.status(200).send();
+    } catch (error) {
+      return res.status(500).send(error);
+      }
+    })();
+});
+
 // delete
-// app.delete('/delete/:item_id', (req, res) => {
-//   (async () => {
-//       try {
-//           const document = db.collection('items').doc(req.params.item_id);
-//           await document.delete();
-//           return res.status(200).send();
-//       } catch (error) {
-//           console.log(error);
-//           return res.status(500).send(error);
-//       }
-//       })();
-//   });
+app.delete('/expenses/:item_id', (req, res) => {
+  (async () => {
+    try {
+      const document = db.collection('expenses').doc(req.params.item_id);
+      await document.delete();
+      return res.status(200).send();
+    } catch (error) {
+      return res.status(500).send(error);
+    }
+    })();
+  });
 
 exports.app = functions.https.onRequest(app);

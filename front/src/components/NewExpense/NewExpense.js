@@ -2,26 +2,26 @@ import React, { useState } from 'react';
 import './NewExpense.scss';
 
 const categoriesList = [
-  { id: 0, name: "Еда", icon: "fast-food" },
-  { id: 1, name: "Жилье", icon: "house"  },
-  { id: 2, name: "Здоровье", icon: "heartbeat"  },
-  { id: 3, name: "Красота", icon: "beauty"  },
-  { id: 4, name: "Машина", icon: "car"  },
-  { id: 5, name: "Транспорт", icon: "van"  },
-  { id: 6, name: "Спорт", icon: "running"  },
-  { id: 7, name: "Развлечения", icon: "popcorn"  },
-  { id: 8, name: "Питомцы", icon: "dog-house"  },
-  { id: 9, name: "Подарки", icon: "giftbox"  },
-  { id: 10, name: "Счета", icon: "finance"  }
+  { id: 0, name: "Еда", category: "fast-food" },
+  { id: 1, name: "Жилье", category: "house" },
+  { id: 2, name: "Здоровье", category: "heartbeat" },
+  { id: 3, name: "Красота", category: "beauty" },
+  { id: 4, name: "Машина", category: "car" },
+  { id: 5, name: "Транспорт", category: "van" },
+  { id: 6, name: "Спорт", category: "running" },
+  { id: 7, name: "Развлечения", category: "popcorn" },
+  { id: 8, name: "Питомцы", category: "dog-house" },
+  { id: 9, name: "Подарки", category: "giftbox" },
+  { id: 10, name: "Счета", category: "finance" }
 ];
 
 function NewExpense(props) {
   const [newTitle, setNewTitle] = useState('');
-  const [newCategory, setNewCategory] = useState(categoriesList[0].icon);
+  const [newCategory, setNewCategory] = useState(categoriesList[0].category);
   const [newPrice, setNewPrice] = useState('');
 
   const categoriesSelection = categoriesList.map((item) =>
-    <option key={item.id} value={item.icon}>{item.name}</option>
+    <option key={item.id} value={item.category}>{item.name}</option>
   );
 
   function handleNewExpense(event) {

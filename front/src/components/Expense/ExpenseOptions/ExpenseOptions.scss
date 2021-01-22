@@ -1,0 +1,17 @@
+@import '../../../styles/mixins.scss';
+
+.expense-options {
+  @include list-style-reset;
+  z-index: 1;
+  position: absolute;
+  top: 15px;
+  right: -115px;
+
+  background-color: white;
+  border: 1px solid #DFDAD9;
+
+  li {
+    padding: 15px 25px;
+    border-bottom: 1px solid #ECE7E6;
+  }
+}
