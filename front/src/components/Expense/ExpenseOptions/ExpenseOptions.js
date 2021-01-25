@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './ExpenseOptions.scss';
+import useOutsideClick from '../../../hooks/click-otside';
 
 function ExpenseOptions(props) {
-  console.log(props);
+  const wrapperRef = useRef(null);
+
+  function hideExpenseOptions() {
+    props.hideOptions();
+  }
+
+  useOutsideClick(wrapperRef, hideExpenseOptions);
+
   return (
-    <ul className="expense-options">
+    <ul ref={wrapperRef} className="expense-options">
       <li>
         <button onClick={ () => { props.props.handleExpenseClick(props.props.item.id) }}>
           Редактировать

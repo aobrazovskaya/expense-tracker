@@ -4,10 +4,14 @@ import { AiOutlineMore } from "react-icons/ai";
 import ExpenseOptions from "./ExpenseOptions/ExpenseOptions";
 
 function Expense(props) {
-  const [isOptions, setIsOptions] = useState(false);
+  let [isOptions, setIsOptions] = useState(false);
 
   function handleOptionsClick() {
     setIsOptions(true);
+  }
+
+  function hideOptions() {
+    setIsOptions(false);
   }
 
   return (
@@ -22,7 +26,7 @@ function Expense(props) {
       <button onClick={ handleOptionsClick }>
         <AiOutlineMore />
       </button>
-      { isOptions && <ExpenseOptions props={props} /> }
+      { isOptions && <ExpenseOptions props={ props } hideOptions={ hideOptions } /> }
     </li>
   );
 }
