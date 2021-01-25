@@ -3,7 +3,6 @@
 .header {
   display: flex;
   margin: 0 15px;
-  padding: 20px 0;
 
   ul {
     @include list-style-reset;
@@ -13,6 +12,10 @@
   }
 
   li {
-    padding: 10px 40px;
+    padding: 20px 40px;
+
+    &:hover {
+      background-color: gainsboro;
+    }
   }
 }

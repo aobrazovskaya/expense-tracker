@@ -11,9 +11,14 @@
     font-size: 30px
   }
 
-  ul {
+  &__list {
     @include list-style-reset;
 
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__wrapper {
     display: flex;
     flex-wrap: wrap;
   }

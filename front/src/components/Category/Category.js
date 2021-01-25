@@ -2,13 +2,11 @@ import React from 'react';
 import './Category.scss';
 
 function Category(props) {
-
-  // const iconPath = `/path/to/spritemap.svg#${props.icon}`;
   return (
-    <li className="category">
+    <li className="category" onClick={ () => { props.getExpensesByCategory(props.category) }}>
       <div className="category__icon">
         <svg width="100" height="100">
-          <use href={`/sprite.svg#${props.icon}`}></use>
+          <use href={`/sprite.svg#${props.category}`}></use>
         </svg>
       </div>
       <p className="category__name">{props.name}</p>

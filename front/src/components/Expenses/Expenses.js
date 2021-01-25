@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './Expenses.scss';
 import Expense from '../Expense/Expense';
 import NewExpense from '../NewExpense/NewExpense';
@@ -6,14 +6,10 @@ import axiosInstance from '../../http/httpInstance';
 import { AiOutlinePlus } from "react-icons/ai";
 import ExpenseEditor from "../Expense/ExpenseEditor/ExpenseEditor";
 
-function Expenses() {
-  const [expensesList, setExpensesList] = useState([]);
+function Expenses(props) {
+  const expenses = props.expenses;
   const [expenseIdEditor, setExpenseIdEditor] = useState('');
-  // const [isExpenseEdit, setIsExpenseEdit] = useState(false);
-
-  function handleExpenseClick(id) {
-    setExpenseIdEditor(id);
-  }
+  const [isNewExpense, setIsNewExpense] = useState(false);
 
   function handleExpenseEditClick(expense) {
     axiosInstance.put('/newexpense', expense)
@@ -22,10 +18,14 @@ function Expenses() {
         setExpenseIdEditor('');
         axiosInstance.get('/expenses')
           .then((response) => {
-            setExpensesList(response.data);
+            props.updateExpensesList(response.data);
           });
       }
     });
+  }
+
+  function handleExpenseClick(id) {
+    setExpenseIdEditor(id);
   }
 
   function handleExpenseDelete(id) {
@@ -34,39 +34,31 @@ function Expenses() {
       if (res.status === 200) {
         axiosInstance.get('/expenses')
           .then((response) => {
-            setExpensesList(response.data);
+            props.updateExpensesList(response.data);
           });
       }
     });
   }
 
-  const expenses = expensesList.map((item) => {
-    if (expenseIdEditor === item.id) {
-      return <ExpenseEditor key={item.id} expense={item} handleExpenseEditClick={ handleExpenseEditClick } />
-    } else {
-      return <Expense key={item.id} item={item} handleExpenseClick={ handleExpenseClick } handleExpenseDelete={ handleExpenseDelete } />
-    }
-  });
+  //
+  function addExpensesList(expenses) {
+    return expenses.map((item) => {
+      if (expenseIdEditor === item.id) {
+        return <ExpenseEditor key={item.id} expense={item} handleExpenseEditClick={ handleExpenseEditClick } />
+      } else {
+        return <Expense key={item.id} item={item} handleExpenseClick={ handleExpenseClick } handleExpenseDelete={ handleExpenseDelete } />
+      }
+    });
+  }
 
-  const [isNewExpense, setIsNewExpense] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    axiosInstance.get('/expenses')
-      .then((response) => {
-        setExpensesList(response.data);
-        setIsLoading(true);
-      });
-    }, []);
-
-  function handleClick(newExpense) {
+  function handleNewExpenseClick(newExpense) {
     setIsNewExpense(false);
     axiosInstance.post('/expenses', newExpense)
     .then((res) => {
       if (res.status === 200) {
         axiosInstance.get('/expenses')
           .then((response) => {
-            setExpensesList(response.data);
+            props.updateExpensesList(response.data);
           });
       }
     });
@@ -77,12 +69,12 @@ function Expenses() {
       <h2>Операции</h2>
       <div className="expenses__table">
         <ul className="expenses__list">
-          { isLoading ? expenses : 'Вы все еще богаты' }
+          { expenses.length ? addExpensesList(expenses) : 'Пока нет записей' }
         </ul>
         { !isNewExpense && <button className="expenses__button" onClick={ () => { setIsNewExpense(true); } }>
           <AiOutlinePlus />
         </button> }
-        { isNewExpense && <NewExpense handleClick={ handleClick } /> }
+        { isNewExpense && <NewExpense handleClick={ handleNewExpenseClick } /> }
       </div>
     </div>
   );

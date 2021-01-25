@@ -49,7 +49,7 @@ app.post('/expenses', (req, res) => {
       } catch (error) {
         return res.status(500).send(error);
       }
-    })();
+  })();
 });
 
 //put
@@ -67,7 +67,7 @@ app.put('/newexpense', (req, res) => {
     } catch (error) {
       return res.status(500).send(error);
       }
-    })();
+  })();
 });
 
 // delete
@@ -80,7 +80,24 @@ app.delete('/expenses/:item_id', (req, res) => {
     } catch (error) {
       return res.status(500).send(error);
     }
-    })();
-  });
+  })();
+});
+
+app.get('/expenses/:item_category', async (req, res) => {
+  try {
+    const result = [];
+    const response = await db.collection('expenses')
+    .where("category", "==", req.params.item_category)
+    .get()
+    .then(function(querySnapshot) {
+      querySnapshot.forEach(function(doc) {
+        result.push(doc.data());
+      });
+    });
+    return res.status(200).send(result);
+  } catch (e) {
+    return res.status(500).send(e);
+  }
+});
 
 exports.app = functions.https.onRequest(app);
