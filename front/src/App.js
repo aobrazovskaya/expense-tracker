@@ -18,7 +18,6 @@ function App() {
           </Route>
           <Route path="/categories">
             <AppWrapper>
-              <Categories />
             </AppWrapper>
           </Route>
           <Route component={ NotFoundPage } />
