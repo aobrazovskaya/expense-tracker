@@ -1,4 +1,15 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Expense Tracker
+
+**Expense Tracker** is an educational project designed to help students learn the fundamentals of full-stack development.  
+It focuses on building a simple expense management application where users can **add**, **edit**, **delete**, and **view** expenses.
+
+## ⚙️ Tech Stack
+
+**Frontend:**
+- NextJS
+- React 
+- TypeScript
+- ESLint + Prettier
 
 ## Getting Started
 
