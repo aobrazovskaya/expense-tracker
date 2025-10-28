@@ -6,8 +6,9 @@ It focuses on building a simple expense management application where users can *
 ## ⚙️ Tech Stack
 
 **Frontend:**
+
 - NextJS
-- React 
+- React
 - TypeScript
 - ESLint + Prettier
 
