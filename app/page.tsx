@@ -1,5 +1,7 @@
 import Logo from '@/app/ui/logo';
 import { fetchPayments } from '@/app/lib/data';
+import Loader from '@/app/ui/loader';
+import Button from '@/app/ui/button';
 
 export default async function Home() {
   // const res = await fetchPayments();
@@ -10,7 +12,11 @@ export default async function Home() {
   return (
     <div className="flex min-h-screen flex-col">
       <Logo />
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between"></main>
+      <Loader />
+
+      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center">
+        <Button>Text</Button>
+      </main>
     </div>
   );
 }
