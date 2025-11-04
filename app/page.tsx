@@ -4,6 +4,7 @@ import Loader from '@/app/ui/loader';
 import Button from '@/app/ui/button';
 import InputLabel from '@/app/ui/inputLabel';
 import Input from '@/app/ui/input';
+import Icon from '@/app//ui/icon';
 
 export default async function Home() {
   // const res = await fetchPayments();
@@ -36,6 +37,10 @@ export default async function Home() {
             helperText="Error message"
             // onChange={handleChange}
           />
+        </>
+        <>
+          <Icon iconName="plus" size={15} color="white" />
+          <Icon iconName="plus" />
         </>
       </main>
     </div>
