@@ -1,16 +1,24 @@
+'use client';
+
 import Logo from '@/app/ui/logo';
 import { fetchPayments } from '@/app/lib/data';
 import Loader from '@/app/ui/loader';
 import Button from '@/app/ui/button';
 import InputLabel from '@/app/ui/inputLabel';
 import Input from '@/app/ui/input';
-import Icon from '@/app//ui/icon';
+import Icon from '@/app/ui/icon';
+import DatePicker from '@/app/ui/datePicker';
+import { useState } from 'react';
 
-export default async function Home() {
+export default function Home() {
   // const res = await fetchPayments();
   // if (!res) {
   //   throw new Error('Failed to fetch data');
   // }
+  const [selectedDate, setSelectedDate] = useState<Date>(new Date());
+  const handleDateChange = (date: Date) => {
+    if (date) setSelectedDate(date);
+  };
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -42,6 +50,8 @@ export default async function Home() {
           <Icon iconName="plus" size={15} color="white" />
           <Icon iconName="plus" />
         </>
+        <DatePicker value={selectedDate} onChange={handleDateChange} />
+        <DatePicker />
       </main>
     </div>
   );

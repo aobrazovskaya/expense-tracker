@@ -15,6 +15,13 @@
   --color-gray-border: #cbcbcb;
 }
 
+@layer utilities {
+  .no-calendar::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+  }
+}
+
 body {
   background: var(--background);
   color: #343434;
