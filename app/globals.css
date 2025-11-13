@@ -12,7 +12,10 @@
   --color-gray-default: #979797;
   --color-neutral: #343434;
   --color-neutral2: #898989;
+  --color-neutral3: #e1e1e1;
+  --color-neutral4: #313a4e;
   --color-gray-border: #cbcbcb;
+  --color-main-red: #ff4267;
 }
 
 @layer utilities {

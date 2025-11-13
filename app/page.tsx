@@ -1,7 +1,6 @@
 'use client';
 
 import Logo from '@/app/ui/logo';
-import { fetchPayments } from '@/app/lib/data';
 import Loader from '@/app/ui/loader';
 import Button from '@/app/ui/button';
 import InputLabel from '@/app/ui/inputLabel';
@@ -11,10 +10,6 @@ import DatePicker from '@/app/ui/datePicker';
 import { useState } from 'react';
 
 export default function Home() {
-  // const res = await fetchPayments();
-  // if (!res) {
-  //   throw new Error('Failed to fetch data');
-  // }
   const [selectedDate, setSelectedDate] = useState<Date>(new Date());
   const handleDateChange = (date: Date) => {
     if (date) setSelectedDate(date);
