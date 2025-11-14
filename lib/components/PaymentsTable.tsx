@@ -1,16 +1,16 @@
 import Icon from '@/app/ui/icon';
 import { Payment } from '../definitions';
-import Image from 'next/image';
 import Checkbox from '@/app/ui/checkbox';
+import MoreActions from '@/app/ui/moreActions';
 
 type PaymentsTableProps = { payments: Payment[] };
 
 export function PaymentsTable({ payments }: PaymentsTableProps) {
   return (
-    <div className="w-full rounded-2xl border border-gray-200 bg-white py-4 shadow-sm">
+    <div className="w-full rounded-3xl bg-white py-4 shadow-sm">
       <table className="w-full table-auto">
         <thead>
-          <tr className="border-b border-gray-200 text-left text-sm text-gray-500">
+          <tr className="border-gray-border text-neutral2 border-b text-left text-sm font-normal">
             <th className="pb-3"></th>
             <th className="pb-3 text-lg font-medium">Name</th>
             <th className="pb-3 text-lg font-medium">Category</th>
@@ -33,12 +33,6 @@ export function PaymentsTable({ payments }: PaymentsTableProps) {
                 </td>
                 <td className="pl flex items-center gap-4 py-2">
                   <div className="bg-primary flex h-12 w-12 items-center justify-center rounded-lg">
-                    {/* <Image
-                    src={`/icons/${payment.category}.svg`}
-                    alt={payment.title}
-                    width={20}
-                    height={20}
-                  /> */}
                     <Icon iconName={iconName} size={20} color="white" />
                   </div>
                   <span className="text-lg font-medium">{payment.title}</span>
@@ -57,11 +51,9 @@ export function PaymentsTable({ payments }: PaymentsTableProps) {
                 <td className="text-main-red">-${payment.amount}</td>
 
                 <td className="pr-10 pl-2">
-                  <Image
-                    src={'/more-vertical.svg'}
-                    width={4}
-                    height={20}
-                    alt="More vertical icon"
+                  <MoreActions
+                    onEdit={() => console.log('edit')}
+                    onDelete={() => console.log('edit')}
                   />
                 </td>
               </tr>
