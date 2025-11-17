@@ -38,11 +38,9 @@ type PaymentsProps = {
 
 export default function Payments({ data }: PaymentsProps) {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="bg-primary-lightist flex min-h-screen flex-col">
       <Logo />
-      <main
-        className={`${inter.className} flex min-h-screen w-full max-w-7xl flex-col items-center`}
-      >
+      <main className={`${inter.className} flex min-h-screen flex-col items-center`}>
         <h1 className="hidden">Payments</h1>
         <PaymentsTable payments={data} />
       </main>
