@@ -4,16 +4,24 @@ import { useState, useEffect, useRef } from 'react';
 import Prev from '@/public/icons/arrow-left.svg';
 import Next from '@/public/icons/arrow-right.svg';
 import formatDate from '@/pages/utils/formatDate';
+import Icon from './icon';
+
+type RangeDate = {
+  start: Date | null;
+  end: Date | null;
+};
 
 interface DatePickerProps {
-  value?: Date;
-  onChange?: (date: Date) => void;
+  value?: RangeDate;
+  onChange?: (range: RangeDate) => void;
 }
 
-export default function DatePicker({ value, onChange }: DatePickerProps) {
+export default function RangeDatePicker({ value, onChange }: DatePickerProps) {
   const [open, setOpen] = useState(false);
-  const [selected, setSelected] = useState<Date | undefined>(value);
-  const [currentDate, setCurrentDate] = useState<Date | undefined>(value);
+  const [range, setRange] = useState<RangeDate>(value ?? { start: null, end: null });
+  const [selecting, setSelecting] = useState<'start' | 'end'>('start');
+
+  const [currentDate, setCurrentDate] = useState<RangeDate>(value ?? { start: null, end: null });
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const ref = useRef<HTMLDivElement>(null);
 
@@ -33,24 +41,50 @@ export default function DatePicker({ value, onChange }: DatePickerProps) {
 
   const firstDay = new Date(currentMonth.getFullYear(), currentMonth.getMonth(), 1).getDay();
 
+  const fmt = (date: Date | null) =>
+    date
+      ? date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
+      : '__/___/____';
+
   const handleDayClick = (day: number) => {
     const date = new Date(currentMonth.getFullYear(), currentMonth.getMonth(), day);
 
-    setSelected(date);
+    if (selecting === 'start') {
+      setRange({ start: date, end: null });
+    } else {
+      if (!range.start || date < range.start) {
+        setRange({ start: date, end: null });
+        return;
+      }
+
+      setRange(prev => ({ ...prev, end: date }));
+    }
   };
 
   return (
     <div className="relative min-w-82" ref={ref}>
-      <input
-        readOnly
-        className="focus:border-primary focus:ring-primary-light border-gray-border h-11 w-full cursor-pointer rounded rounded-2xl border p-3 text-sm font-medium focus:ring-2 focus:outline-none"
-        value={formatDate(currentDate as Date) ?? 'Select a date'}
-        onClick={() => setOpen(true)}
-      />
-      <span
-        className="absolute top-1/2 right-3 h-6 w-6 -translate-y-1/2 cursor-pointer bg-[url('/icons/calendar.svg')] bg-contain bg-center bg-no-repeat"
-        onClick={() => setOpen(true)}
-      />
+      <div className="flex items-center px-4 text-sm font-semibold underline underline-offset-4">
+        <Icon iconName="calendar" size={26} />
+        <span
+          className="ml-2 cursor-pointer"
+          onClick={() => {
+            setSelecting('start');
+            setOpen(true);
+          }}
+        >
+          {fmt(currentDate.start)}
+        </span>
+        {' - '}
+        <span
+          className="cursor-pointer"
+          onClick={() => {
+            setSelecting('end');
+            setOpen(true);
+          }}
+        >
+          {fmt(currentDate.end)}
+        </span>
+      </div>
 
       {open && (
         <div className="absolute z-50 mt-2 ml-1 w-80 rounded-xl border bg-white shadow-lg">
@@ -102,7 +136,9 @@ export default function DatePicker({ value, onChange }: DatePickerProps) {
               const day = i + 1;
               const date = new Date(currentMonth.getFullYear(), currentMonth.getMonth(), day);
 
-              const isSelected = selected?.toDateString() === date.toDateString();
+              const isSelected =
+                (range.start && date.toDateString() === range.start.toDateString()) ||
+                (range.end && date.toDateString() === range.end.toDateString());
 
               return (
                 <button
@@ -119,21 +155,28 @@ export default function DatePicker({ value, onChange }: DatePickerProps) {
           </div>
           <div className="flex justify-between p-4">
             <input
-              value={formatDate(selected) ?? ''}
+              value={formatDate(selecting === 'start' ? range.start : range.end)}
               className="border-gray-border no-calendar w-32 rounded-lg border p-2 text-center text-sm"
               onChange={e => {
                 const target = e.target.valueAsDate;
+                console.log(target);
                 if (target) {
                   setCurrentMonth(target);
-                  setSelected(target);
+                  setRange(prev =>
+                    selecting === 'start' ? { ...prev, start: target } : { ...prev, end: target }
+                  );
                 }
               }}
             />
             <button
               className="bg-primary hover:bg-primary-dark w-32 cursor-pointer rounded-lg border px-4 py-2 text-sm font-medium text-white"
               onClick={() => {
-                setCurrentDate(selected);
-                if (onChange && currentDate) onChange(currentDate);
+                setCurrentDate(prev =>
+                  selecting === 'start'
+                    ? { ...prev, start: range.start }
+                    : { ...prev, end: range.end }
+                );
+                if (onChange && currentDate) onChange(range);
                 setOpen(false);
               }}
             >

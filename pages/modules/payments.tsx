@@ -1,11 +1,14 @@
+'use client';
+
+import { useState } from 'react';
+import localFont from 'next/font/local';
+import '@/app/globals.css';
+
 import Logo from '@/app/ui/logo';
 import { PaymentsTable } from '@/lib/components/PaymentsTable';
 import { Payment } from '@/lib/definitions';
-import { fetchPayments } from '@/lib/server/getPayments';
-import '@/app/globals.css';
 import data from '../../lib/payments.json';
-
-import localFont from 'next/font/local';
+import RangeDatePicker from '@/app/ui/rangeDatePicker';
 
 const inter = localFont({
   src: [
@@ -37,11 +40,17 @@ type PaymentsProps = {
 };
 
 export default function Payments({ data }: PaymentsProps) {
+  const [startDate, setStartdate] = useState<Date | null>(new Date());
+  const [endDate, setEndDate] = useState<Date | null>(new Date());
+
   return (
     <div className="bg-primary-lightist flex min-h-screen flex-col">
       <Logo />
-      <main className={`${inter.className} flex min-h-screen flex-col items-center`}>
+      <main className={`${inter.className} flex min-h-screen flex-col`}>
         <h1 className="hidden">Payments</h1>
+        <div className="mt-16 mb-4 flex px-4 md:px-8">
+          <RangeDatePicker value={{ start: startDate, end: endDate }} />
+        </div>
         <PaymentsTable payments={data} />
       </main>
     </div>
