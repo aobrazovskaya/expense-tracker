@@ -1,11 +1,11 @@
 import Icon from '@/app/ui/icon';
-import { Payment } from '../definitions';
+import { Payment } from '../../lib/definitions';
 import Checkbox from '@/app/ui/checkbox';
 import MoreActions from '@/app/ui/moreActions';
 
 type PaymentsTableProps = { payments: Payment[] };
 
-export function PaymentsTable({ payments }: PaymentsTableProps) {
+export default function PaymentsTable({ payments }: PaymentsTableProps) {
   return (
     <div className="w-full px-4 md:px-8">
       <div className="rounded-3xl bg-white shadow-sm">

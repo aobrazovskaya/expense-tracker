@@ -40,7 +40,7 @@ export default function DatePicker({ value, onChange }: DatePickerProps) {
   };
 
   return (
-    <div className="relative min-w-82" ref={ref}>
+    <div className="relative w-full max-w-82" ref={ref}>
       <input
         readOnly
         className="focus:border-primary focus:ring-primary-light border-gray-border h-11 w-full cursor-pointer rounded rounded-2xl border p-3 text-sm font-medium focus:ring-2 focus:outline-none"
@@ -53,7 +53,7 @@ export default function DatePicker({ value, onChange }: DatePickerProps) {
       />
 
       {open && (
-        <div className="absolute z-50 mt-2 ml-1 w-80 rounded-xl border bg-white shadow-lg">
+        <div className="absolute z-50 mt-2 ml-1 w-full max-w-80 rounded-xl border bg-white shadow-lg">
           {/* Header */}
           <div className="border-gray-border mb-2 flex items-center justify-between border-b p-4">
             <button
@@ -107,7 +107,8 @@ export default function DatePicker({ value, onChange }: DatePickerProps) {
               return (
                 <button
                   key={day}
-                  onClick={() => {
+                  onClick={e => {
+                    e.preventDefault();
                     handleDayClick(day);
                   }}
                   className={`hover:bg-primary cursor-pointer rounded-full p-2 hover:text-white ${isSelected && 'bg-primary text-white'}`}

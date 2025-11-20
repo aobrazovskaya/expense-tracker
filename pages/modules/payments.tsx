@@ -5,10 +5,11 @@ import localFont from 'next/font/local';
 import '@/app/globals.css';
 
 import Logo from '@/app/ui/logo';
-import { PaymentsTable } from '@/lib/components/PaymentsTable';
 import { Payment } from '@/lib/definitions';
-import data from '../../lib/payments.json';
+import data from '@/lib/payments.json';
 import RangeDatePicker from '@/app/ui/rangeDatePicker';
+import PaymentsTable from '@/pages/components/paymentsTable';
+import AddPaymentModal from '@/pages/components/addPaymentModal';
 
 const inter = localFont({
   src: [
@@ -52,6 +53,7 @@ export default function Payments({ data }: PaymentsProps) {
           <RangeDatePicker value={{ start: startDate, end: endDate }} />
         </div>
         <PaymentsTable payments={data} />
+        <AddPaymentModal />
       </main>
     </div>
   );
