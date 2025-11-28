@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 
 import Prev from '@/public/icons/arrow-left.svg';
 import Next from '@/public/icons/arrow-right.svg';
-import formatDate from '@/pages/utils/formatDate';
+import formatDate from '@/utils/formatDate';
 
 interface DatePickerProps {
   value?: Date;

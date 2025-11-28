@@ -1,7 +1,7 @@
-import Icon from '@/app/ui/icon';
-import { Payment } from '../../lib/definitions';
-import Checkbox from '@/app/ui/checkbox';
-import MoreActions from '@/app/ui/moreActions';
+import Icon from '@/components/ui/icon';
+import { Payment } from '../lib/definitions';
+import Checkbox from '@/components/ui/checkbox';
+import MoreActions from '@/components/ui/moreActions';
 
 type PaymentsTableProps = { payments: Payment[] };
 
@@ -53,8 +53,9 @@ export default function PaymentsTable({ payments }: PaymentsTableProps) {
 
                   <td className="pr-10 pl-2">
                     <MoreActions
+                      onView={() => console.log('view')}
                       onEdit={() => console.log('edit')}
-                      onDelete={() => console.log('edit')}
+                      onDelete={() => console.log('delete')}
                     />
                   </td>
                 </tr>

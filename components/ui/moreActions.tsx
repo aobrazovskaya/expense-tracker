@@ -4,9 +4,11 @@ import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 
 export default function MoreActions({
+  onView,
   onEdit,
   onDelete,
 }: {
+  onView?: () => void;
   onEdit?: () => void;
   onDelete?: () => void;
 }) {
@@ -32,6 +34,19 @@ export default function MoreActions({
       {open && (
         <div className="border-gray-border/30 absolute right-4 z-50 w-50 origin-top-right rounded-xl border bg-white shadow-lg">
           <ul className="py-1">
+            {onView && (
+              <li>
+                <button
+                  onClick={() => {
+                    onView();
+                    setOpen(false);
+                  }}
+                  className="flex w-full cursor-pointer items-center px-3 py-4"
+                >
+                  View
+                </button>
+              </li>
+            )}
             {onEdit && (
               <li>
                 <button

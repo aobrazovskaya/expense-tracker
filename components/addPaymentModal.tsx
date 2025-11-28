@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import Icon from '@/app/ui/icon';
+import Icon from '@/components/ui/icon';
 import CategoriesForm from './categoriesForm';
-import DatePicker from '@/app/ui/datePicker';
+import DatePicker from '@/components/ui/datePicker';
 
 type FormState = {
   title: string;
@@ -67,21 +67,21 @@ export default function AddPaymentModal() {
                 value={form.title}
                 onChange={handleChange}
                 required
-                className="border-gray-border mt-2 w-full rounded-2xl border p-3"
+                className="focus:ring-primary-light focus:border-primary border-gray-border mt-2 w-full rounded-2xl border p-3 focus:ring-2 focus:outline-none"
                 placeholder="Text input"
               />
             </div>
 
             <div>
               <label className="text-gray-default text-sm font-medium">Payment amount</label>
-              <div className="mt-2 flex items-center overflow-hidden rounded-2xl border border-gray-300 py-1">
+              <div className="focus-within:ring-primary-light focus-within:border-primary border-gray-border mt-2 flex items-center overflow-hidden rounded-2xl border py-1 focus-within:ring-2 focus-within:outline-none">
                 <input
                   type="number"
                   name="amount"
                   value={form.amount}
                   onChange={handleChange}
                   required
-                  className="w-full p-3"
+                  className="w-full p-3 focus:outline-none"
                 />
                 <select
                   name="currency"

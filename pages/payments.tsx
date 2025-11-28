@@ -1,1 +1,1 @@
-export { default, getServerSideProps } from '@/pages/modules/payments';
+export { default, getServerSideProps } from '@/modules/payments';

@@ -1,4 +1,4 @@
-import Icon from '@/app/ui/icon';
+import Icon from '@/components/ui/icon';
 
 const categories = [
   { id: 'subscriptions', icon: '/icons/subscriptions.svg' },
