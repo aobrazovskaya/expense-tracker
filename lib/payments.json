@@ -1,0 +1,452 @@
+[
+  {
+    "id": "49d9fbfd-b446-47df-94ed-e085bcda0e42",
+    "title": "Morning coffee",
+    "amount": "3.50",
+    "currency": "EUR",
+    "category": "Restaurants",
+    "date": "2025-11-01T06:30:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "fe5d4cd1-5742-4067-89e7-4d569d203092",
+    "title": "Mobile bill",
+    "amount": "15.99",
+    "currency": "EUR",
+    "category": "Mobile",
+    "date": "2025-11-01T08:00:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "fd9dc5f0-3eb3-44a8-b15c-ed2c724671f5",
+    "title": "Spotify Premium",
+    "amount": "9.99",
+    "currency": "EUR",
+    "category": "Subscriptions",
+    "date": "2025-11-01T10:10:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "8853e0cf-f01b-450c-9f9b-d49f8ce16177",
+    "title": "Gym membership",
+    "amount": "29.99",
+    "currency": "EUR",
+    "category": "Hobby",
+    "date": "2025-11-01T16:00:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "b8c31db4-597d-40a7-a494-40261b8be8f4",
+    "title": "Groceries - Lidl",
+    "amount": "42.90",
+    "currency": "EUR",
+    "category": "Utility",
+    "date": "2025-11-02T09:25:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "734a589e-33f6-45b2-9f86-91a8462687ea",
+    "title": "Uber ride",
+    "amount": "7.20",
+    "currency": "EUR",
+    "category": "Transport",
+    "date": "2025-11-02T11:15:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "b31268eb-5ac8-49ae-98c5-83dfbd4a7098",
+    "title": "Amazon order",
+    "amount": "19.99",
+    "currency": "EUR",
+    "category": "Online shopping",
+    "date": "2025-11-02T15:40:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "910d3866-d392-4d21-9c64-3ce5cc5bd8ad",
+    "title": "Credit card payment",
+    "amount": "120.00",
+    "currency": "EUR",
+    "category": "Credit",
+    "date": "2025-11-03T07:40:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "f5654152-afa4-4a2a-977e-cb5c1277408b",
+    "title": "Electricity bill",
+    "amount": "64.10",
+    "currency": "EUR",
+    "category": "Utility",
+    "date": "2025-11-03T17:20:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "fe268d7b-d2b1-4312-ab20-35aa8e8d6e0e",
+    "title": "New headphones",
+    "amount": "49.99",
+    "currency": "EUR",
+    "category": "Online shopping",
+    "date": "2025-11-04T13:30:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "65c371d3-9ab0-45a2-a7eb-0ea60d9db81b",
+    "title": "Adobe subscription",
+    "amount": "19.99",
+    "currency": "EUR",
+    "category": "Subscriptions",
+    "date": "2025-11-04T07:10:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "6f5506f6-0de7-4e9b-9529-52e93d283c0b",
+    "title": "Burger King lunch",
+    "amount": "8.49",
+    "currency": "EUR",
+    "category": "Restaurants",
+    "date": "2025-11-04T11:00:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "b7a42e52-f8b8-43e4-9253-917c70c47059",
+    "title": "Credit repayment",
+    "amount": "50.00",
+    "currency": "EUR",
+    "category": "Credit",
+    "date": "2025-11-05T14:05:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "e1a3983e-da7e-4b23-9b56-a7330c1d7e3a",
+    "title": "Cinema tickets",
+    "amount": "17.80",
+    "currency": "EUR",
+    "category": "Hobby",
+    "date": "2025-11-05T18:00:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "0b65a594-d6e4-42a1-9aaf-6c6b353a859a",
+    "title": "E-bike recharge",
+    "amount": "2.90",
+    "currency": "EUR",
+    "category": "Transport",
+    "date": "2025-11-06T08:30:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "d1efb7aa-941b-497e-9f88-b9fe9f54fb3b",
+    "title": "Phone repair",
+    "amount": "79.00",
+    "currency": "EUR",
+    "category": "Mobile",
+    "date": "2025-11-06T10:15:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "dacc5025-5246-46e2-8543-2ccbede3f2d0",
+    "title": "Patreon donation",
+    "amount": "4.00",
+    "currency": "EUR",
+    "category": "Other payments",
+    "date": "2025-11-06T19:05:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "09d74a30-fa2e-4a8b-bab9-8125b1921ed4",
+    "title": "Gas station coffee",
+    "amount": "2.10",
+    "currency": "EUR",
+    "category": "Restaurants",
+    "date": "2025-11-07T05:50:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "4629340c-64e4-43b9-bcd9-668e41e0b276",
+    "title": "Taxi to airport",
+    "amount": "27.80",
+    "currency": "EUR",
+    "category": "Transport",
+    "date": "2025-11-07T06:30:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "4076a36e-be31-4572-b525-4fdcfcba0a16",
+    "title": "Credit interest fee",
+    "amount": "6.50",
+    "currency": "EUR",
+    "category": "Debts",
+    "date": "2025-11-07T21:40:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "f8872775-a80e-47d2-962c-04e673e773d0",
+    "title": "Netflix subscription",
+    "amount": "12.99",
+    "currency": "EUR",
+    "category": "Subscriptions",
+    "date": "2025-11-08T16:10:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "98e23c05-c8fc-4108-b22b-3e54f00362af",
+    "title": "Board game weekend",
+    "amount": "16.00",
+    "currency": "EUR",
+    "category": "Hobby",
+    "date": "2025-11-08T18:30:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "82c08d42-25b6-4908-9366-b7102631b2de",
+    "title": "iCloud storage",
+    "amount": "2.99",
+    "currency": "EUR",
+    "category": "Mobile",
+    "date": "2025-11-09T00:00:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "2603140d-6b76-416c-9b9c-f077acc1dc1f",
+    "title": "Train ticket",
+    "amount": "6.70",
+    "currency": "EUR",
+    "category": "Transport",
+    "date": "2025-11-09T07:40:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "6c5aadd6-883d-4c3b-b955-9aef177404ff",
+    "title": "Starbucks",
+    "amount": "6.10",
+    "currency": "EUR",
+    "category": "Restaurants",
+    "date": "2025-11-09T09:30:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "e9eec579-3554-4bbc-8472-60481f934c44",
+    "title": "Zara order",
+    "amount": "38.40",
+    "currency": "EUR",
+    "category": "Online shopping",
+    "date": "2025-11-10T15:00:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "befe04fd-3cad-43fb-9b48-592e5d538f23",
+    "title": "Payment to friend",
+    "amount": "20.00",
+    "currency": "EUR",
+    "category": "Debts",
+    "date": "2025-11-11T18:45:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "3997976c-65c5-4b59-b826-c3325da24f4b",
+    "title": "SIM top-up",
+    "amount": "10.00",
+    "currency": "EUR",
+    "category": "Mobile",
+    "date": "2025-11-12T20:05:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "51ccc0de-c8e3-4f1b-9a81-7537d7d17631",
+    "title": "Car sharing",
+    "amount": "13.90",
+    "currency": "EUR",
+    "category": "Transport",
+    "date": "2025-11-12T06:10:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "e7000de3-f74a-42fe-a96d-d5e3ec3312e5",
+    "title": "Steam game",
+    "amount": "9.50",
+    "currency": "EUR",
+    "category": "Hobby",
+    "date": "2025-11-12T21:59:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "fbb03959-8c0c-4be6-91ae-0ff739281f09",
+    "title": "ExpressVPN",
+    "amount": "8.33",
+    "currency": "EUR",
+    "category": "Subscriptions",
+    "date": "2025-11-13T05:50:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "0ef56ad8-5db0-450b-8ff1-a27fe428d0c7",
+    "title": "New slippers",
+    "amount": "14.00",
+    "currency": "EUR",
+    "category": "Online shopping",
+    "date": "2025-11-13T11:30:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "675749fa-eb65-49db-91d5-9589cc103470",
+    "title": "Pizza delivery",
+    "amount": "11.40",
+    "currency": "EUR",
+    "category": "Restaurants",
+    "date": "2025-11-13T19:10:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "15636350-d407-41f4-ab0b-cf302c79140b",
+    "title": "City bus pass",
+    "amount": "29.00",
+    "currency": "EUR",
+    "category": "Transport",
+    "date": "2025-11-14T05:05:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "28d0d3aa-5a71-4c3e-8045-1e3f9074d0f9",
+    "title": "Spotify add-on",
+    "amount": "4.50",
+    "currency": "EUR",
+    "category": "Subscriptions",
+    "date": "2025-11-14T07:40:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "600d5723-9f8e-4de7-8a23-c1c6c4b24b74",
+    "title": "Google Play apps",
+    "amount": "2.59",
+    "currency": "EUR",
+    "category": "Mobile",
+    "date": "2025-11-14T20:20:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "f6be1f5e-c27f-4817-a013-621af88e6dc1",
+    "title": "Heating bill",
+    "amount": "52.00",
+    "currency": "EUR",
+    "category": "Utility",
+    "date": "2025-11-15T15:00:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "1af9117b-3d9d-4086-9322-9eb00b8dd5d5",
+    "title": "Emergency dentist",
+    "amount": "90.00",
+    "currency": "EUR",
+    "category": "Other payments",
+    "date": "2025-11-15T13:00:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "1d2beb55-95f2-4b5e-83b4-15c114a013c5",
+    "title": "Revolut monthly fee",
+    "amount": "3.00",
+    "currency": "EUR",
+    "category": "Other payments",
+    "date": "2025-11-15T07:00:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "72bb9ae7-6c7c-4a80-88e2-fe866592845c",
+    "title": "McDonalds",
+    "amount": "5.90",
+    "currency": "EUR",
+    "category": "Restaurants",
+    "date": "2025-11-15T20:30:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "60961bfb-09af-4418-942b-4c9c43786622",
+    "title": "Debt repayment to mom",
+    "amount": "75.00",
+    "currency": "EUR",
+    "category": "Debts",
+    "date": "2025-11-16T09:30:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "539ae395-f12e-4cd0-b4d8-d4318afcb76b",
+    "title": "Zoho subscription",
+    "amount": "14.00",
+    "currency": "EUR",
+    "category": "Subscriptions",
+    "date": "2025-11-16T12:10:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "f6f340cd-ac92-4488-9e42-c12953f8dabc",
+    "title": "Hot chocolate",
+    "amount": "3.80",
+    "currency": "EUR",
+    "category": "Restaurants",
+    "date": "2025-11-17T07:15:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "2365c679-e87d-4b3e-b1ac-9e0c55e1c299",
+    "title": "Coffee beans",
+    "amount": "12.50",
+    "currency": "EUR",
+    "category": "Utility",
+    "date": "2025-11-17T11:10:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "f5857815-5211-4f33-9f08-68a3a539af91",
+    "title": "PS5 game addon",
+    "amount": "7.99",
+    "currency": "EUR",
+    "category": "Hobby",
+    "date": "2025-11-17T21:45:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "cf9c0e07-a099-4393-93b4-8eead28ef7fd",
+    "title": "Credit card fee",
+    "amount": "1.90",
+    "currency": "EUR",
+    "category": "Credit",
+    "date": "2025-11-18T06:00:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "578249a0-83b5-453c-bd9f-d35c633a8c4b",
+    "title": "New backpack",
+    "amount": "39.90",
+    "currency": "EUR",
+    "category": "Online shopping",
+    "date": "2025-11-18T17:30:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "b3ec36f3-4128-421b-9916-587f902e5dfb",
+    "title": "Debt repayment extra",
+    "amount": "25.00",
+    "currency": "EUR",
+    "category": "Debts",
+    "date": "2025-11-19T18:00:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "77bcfcce-6e76-439e-9b39-156d102f123e",
+    "title": "Phone case",
+    "amount": "6.20",
+    "currency": "EUR",
+    "category": "Mobile",
+    "date": "2025-11-19T12:00:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  },
+  {
+    "id": "11033f72-1de6-4fed-ac25-8a0cde53c180",
+    "title": "Energy drink",
+    "amount": "2.80",
+    "currency": "EUR",
+    "category": "Restaurants",
+    "date": "2025-11-19T16:30:00.000Z",
+    "created_at": "2025-11-11T09:05:50.987Z"
+  }
+]
